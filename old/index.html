@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+        tr[data-href]{
+            cursor: pointer;
+        }
+        table th{
+            width: auto !important;
+        }
+        body{
+            background-color: black;
+        }
+
+        @media (min-width: 768px) {  
+            td {font-size:2rem;} /*1rem = 16px*/
+        }
+
+        /* @media (min-width: 544px) {  
+            td {font-size:2.5rem;} /*1rem = 16px*/
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="pt-5 px-5">
+    <table class="table table-hover pt-3 table-dark table-striped table-bordered">
+        <tbody>
+            <tr data-href="tracking/inbound.html">
+                <td width = "20%"><img class="img" src="images2/inbound.jpg" width="100%" ></td>
+                <td colspan="2" scope="row">
+                    <span class="font-weight-bold">Inbound:</span>  <br/>
+                    <span class="subtext">When items arrive in the warehouse of the company location</span>
+                </td>
+            </tr>
+            <tr data-href="tracking/track.html">
+                <td width = "20%"><img class="img" src="images2/allocate.jpg" width="100%" ></td>
+                <td>
+                    <span class="font-weight-bold">Track & Allocate Inventory:</span>  <br/>
+                    <span class="subtext">The process of assigning the available quantities for an inventory item in a specific warehouse location to the outstanding sales order and shop order lines that have been entered for the item in that location</span>
+                </td>
+            </tr>
+            <tr data-href="tracking/location.html">
+                <td width = "20%"><img class="img" src="images2/location.jpg" width="100%" ></td>
+                <td colspan="2" scope="row">
+                    <span class="font-weight-bold">Location & Putaway:</span>  <br/>
+                    <span class="subtext">The process of moving incoming goods from the dock to their permanent location within a warehouse</span>
+                </td>
+            </tr>
+            <tr data-href="tracking/manage.html">
+                <td width = "20%"><img class="img" src="images2/manage.jpg" width="100%" ></td>
+                <td>
+                    <span class="font-weight-bold">Manage Inventory:</span>  <br/>
+                    <span class="subtext">Supervises the flow of goods from manufacturers to warehouses and from these facilities to point of sale</span>
+                </td>
+            </tr>
+            <tr data-href="tracking/outbound.html">
+                <td width = "20%"><img class="img" src="images2/outbound.jpg" width="100%" ></td>
+                <td>
+                    <span class="font-weight-bold">Outbound:</span>  <br/>
+                    <span class="subtext">The shipping out of finished products to customers from a warehouse or distribution center</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const rows = document.querySelectorAll("tr[data-href]");
+
+            rows.forEach(row => {
+                row.addEventListener("click", () =>{
+                    window.location.href = row.dataset.href;
+                });
+            }); 
+        });
+    </script>
+
+</body>
+</html>
